@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
   - name: estudos-k8s
-    image: rjorge/estudos-k8s:1
+    image: xdigu/estudos-k8s:0.0.1
     resources:
       limits:
         memory: "64Mi"
