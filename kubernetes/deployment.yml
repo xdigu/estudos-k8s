@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: estudos-k8s
-        image: rjorge/estudos-k8s:4
+        image: rjorge/estudos-k8s:0.0.1
         imagePullPolicy: Always
         ports:
         - name: nodejs-port
