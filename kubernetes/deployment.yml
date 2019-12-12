@@ -1,0 +1,50 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: estudos-k8s
+spec:
+  replicas: 2
+  minReadySeconds: 30
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: estudos-k8s
+  selector:
+    matchLabels:
+      app: estudos-k8s
+  template:
+    metadata:
+      labels:
+        app: estudos-k8s
+    spec:
+      containers:
+      - name: estudos-k8s
+        image: rjorge/estudos-k8s:4
+        imagePullPolicy: Always
+        ports:
+        - name: nodejs-port
+          containerPort: 3001
+        resources:
+          requests:
+            cpu: "100m"
+          limits:
+            memory: "64Mi"
+            cpu: "100m"
+        livenessProbe:
+            httpGet:
+              path: /ping
+              port: nodejs-port
+            initialDelaySeconds: 10
+            timeoutSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /ping
+            port: nodejs-port
+          initialDelaySeconds: 15
+          timeoutSeconds: 30
+      

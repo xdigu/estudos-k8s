@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: estudos-k8s
+  labels:
+    name: estudos-k8s
+spec:
+  containers:
+  - name: estudos-k8s
+    image: rjorge/estudos-k8s:1
+    resources:
+      limits:
+        memory: "64Mi"
+        cpu: "100m"
+    ports:
+      - containerPort: 3001

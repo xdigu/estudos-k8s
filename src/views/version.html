@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #header {
+        width: 100%;
+        height: 80px;
+        background: #2f73da;
+        font-size: 26px;
+        font-weight: bold;
+        color: #ffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: auto;
+    }
+
+    #painel {
+        max-width: 700px;
+        margin: 20px auto 0;
+        padding: 0 20px;
+    }
+
+    #endpoints {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    #endpoints h1 {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    #endpoints p {
+        padding: 0px;
+        margin: 0px;
+        font-size: 14px;
+        color: #999;
+        margin-top: 5px;
+        line-height: 24px;
+    }
+
+    #endpoints a {
+        color: #069;
+        text-decoration: none;
+    }
+</style>
+
+<head>
+    <title>api version</title>
+</head>
+
+<body style="background: #fafafa; margin: 0px;">
+    <div id="header">
+        <h1>api version: 1.0</h1>
+    </div>
+    <div id="painel">
+        <div id="endpoints">
+            <h1>/</h1>
+            <p>Nos leva para a home da api</p>
+            <a href="/">home</a>
+        </div>
+        <div id="endpoints">
+            <h1>/ping</h1>
+            <p>Mostra quando a api está rodando ou não</p>
+            <a href="/ping">ping</a>
+        </div>
+        <div id="endpoints">
+            <h1>/block</h1>
+            <p>Implementação de fibonaci para estressar a aplicação</p>
+            <a href="/block/10">block</a>
+        </div>
+    </div>
+</body>
+
+</html>

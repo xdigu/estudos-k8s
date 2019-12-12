@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  estudos-k8s
+spec:
+  selector:
+    app: estudos-k8s
+  type: NodePort
+  ports:
+  - port: 3001
+    nodePort: 30001
+    targetPort: nodejs-port
+    protocol: TCP
